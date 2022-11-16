@@ -36,7 +36,6 @@ void MainWindow::updateInterface(int id, int x, int y){
     switch(id){
     case 1: //Atualiza a posição do objeto da tela (quadrado) que representa o trem 1
         ui->label_trem1->setGeometry(x,y,21,17);
-        ui->label_trem1->setNum(ui->horizontalSlider_1->value());
         break;
     case 2: //Atualiza a posição do objeto da tela (quadrado) que representa o trem 2
         ui->label_trem2->setGeometry(x,y,21,17);

@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QLabel { background: #9bbb59}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label_trilho2_1">
@@ -30,7 +30,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>==============================</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho1">
@@ -46,7 +46,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho0">
@@ -62,7 +62,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -104,7 +104,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho3_1">
@@ -120,7 +120,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>==============================</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho1_1">
@@ -133,10 +133,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { 
+	background: yellow
+}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho1_3">
@@ -152,7 +154,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string> #==============</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho1_2">
@@ -168,7 +170,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>==============================</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho4_1">
@@ -184,7 +186,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho6">
@@ -200,7 +202,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho5_1">
@@ -216,7 +218,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;#&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;||&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho4_2">
@@ -232,7 +234,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string> #==============================</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho5_2">
@@ -248,7 +250,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string> #===============================#</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho2">
@@ -264,7 +266,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>==============</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho4">
@@ -280,7 +282,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>===============#</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho3">
@@ -296,7 +298,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string> #==============</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho5">
@@ -312,7 +314,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>=============</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trilho3_3">
@@ -328,7 +330,7 @@
      <string notr="true">QLabel { background: yellow}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>===============#</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trem1">
@@ -340,11 +342,14 @@
       <height>17</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: #9bbb59}</string>
+     <string notr="true">QLabel { background: #9bbb59; }</string>
     </property>
     <property name="text">
-     <string/>
+     <string>🚂🚃</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trem4">
@@ -357,10 +362,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: #f79646}</string>
+     <string notr="true">QLabel{ background: #f79646}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>🚂🚃</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trem5">
@@ -373,10 +378,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: #8064a2}</string>
+     <string notr="true">QLabel{background-color: #8064a2}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>🚂🚃</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trem2">
@@ -389,10 +394,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: #c0504d}</string>
+     <string notr="true">QLabel{background: #c0504d}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>🚂🚃</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_trem3">
@@ -405,10 +410,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: #4f81bd}</string>
+     <string notr="true">QLabel{  background: #4f81bd}</string>
     </property>
     <property name="text">
-     <string/>
+     <string>🚂🚃</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider_1">
@@ -469,6 +474,9 @@
       <width>160</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">QSlider::handle:horizontal{ background: #4f81bd}</string>
