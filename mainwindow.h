@@ -20,7 +20,12 @@ public:
 public slots:
     void updateInterface(int,int,int);
 
+    void ocupaTrilho(int id_Trem, int id_Trilho);
+
+    void desocupaTrilho(int id_Trilho);
+
 private slots:
+
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();

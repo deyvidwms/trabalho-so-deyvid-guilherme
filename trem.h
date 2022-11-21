@@ -16,10 +16,17 @@ public:
     Trem(int ID, int x, int y, int vel);  //construtor com velocidade variável
     void run();         //função a ser executada pela thread
     void setVel(int value);
+    void setX(int x);
+    void setY(int y);
+    int getX();
+    int getY();
 
 //Cria um sinal
 signals:
     void updateGUI(int ID, int x, int y, int vel);
+    void ocupaTrilho(int id_Trem, int id_Trilho);
+    void desocupaTrilho(int id_Trilho);
+
 
 private:
    int x;           //posição X do trem na tela
