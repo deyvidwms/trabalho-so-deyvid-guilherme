@@ -49,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
     sem_init(&semaforos[3], 0, 1);
     sem_init(&semaforos[4], 0, 0);
     sem_init(&semaforos[5], 0, 1);
-    sem_init(&semaforos[6], 0, 1);
+    sem_init(&semaforos[6], 0, 0);
 
     init_trem();
 }
