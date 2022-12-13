@@ -2,11 +2,7 @@
 #include "ui_mainwindow.h"
 #include <semaphore.h>
 
-#define LIVRE true;
-#define OCUPADO false;
-
-sem_t semaphoro;
-bool trilhos [7] = {false, false, false, true, false, true, true};
+sem_t semaforos [7];
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -47,7 +43,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(trem4,SIGNAL(desocupaTrilho(int)),SLOT(desocupaTrilho(int)));
     connect(trem5,SIGNAL(desocupaTrilho(int)),SLOT(desocupaTrilho(int)));
 
-    sem_init(&semaphoro, 0, 1);
+    sem_init(&semaforos[0], 0, 0);
+    sem_init(&semaforos[1], 0, 0);
+    sem_init(&semaforos[2], 0, 0);
+    sem_init(&semaforos[3], 0, 1);
+    sem_init(&semaforos[4], 0, 0);
+    sem_init(&semaforos[5], 0, 1);
+    sem_init(&semaforos[6], 0, 1);
 
     init_trem();
 }
@@ -81,135 +83,186 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::ocupaTrilho(int id_Trem, int id_Trilho){
-    sem_wait(&semaphoro);
+    int aux;
     switch (id_Trem) {
-    case 1:
-        switch (id_Trilho) {
-        case 0:
-            if(trilhos[0]&& trilhos[2]){
-                trilhos[0] = OCUPADO;
-                trem1->setX(trem1->getX() + 10);
+        case 1:
+            switch (id_Trilho) {
+                case 0:
+                    sem_getvalue(&semaforos[0], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[2], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[0]);
+                    trem1->setX(trem1->getX() + 10);
+                    break;
+                case 2:
+                    sem_getvalue(&semaforos[2], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[2]);
+                    trem1->setY(trem1->getY() + 10);
+                    break;
+                default:
+                    break;
             }
             break;
         case 2:
-            if(trilhos[2]){
-                trilhos[2] = OCUPADO;
-                trem1->setY(trem1->getY() + 10);
-            }
-            break;
-        default:
-            break;
-        }
-        break;
-    case 2:
-        switch (id_Trilho) {
-        case 0:
-            if(trilhos[0]){
-                trilhos[0] = OCUPADO;
-                trem2->setX(trem2->getX() - 10);
-            }
-            break;
-        case 1:
-            if(trilhos[1]&&trilhos[5]){
-                trilhos[1] = OCUPADO;
-                trem2->setX(trem2->getX() + 10);
-            }
-            break;
-        case 3:
-            if(trilhos[3]){
-                trilhos[3] = OCUPADO;
-                trem2->setX(trem2->getX() - 10);
-            }
-            break;
-        case 4:
-            if(trilhos[4]&&trilhos[3]){
-                trilhos[4] = OCUPADO;
-                trem2->setY(trem2->getY() + 10);
-            }
-            break;
-        default:
-            break;
-        }
-        break;
-    case 3:
-        switch (id_Trilho) {
-        case 1:
-            if(trilhos[1]){
-                trilhos[1] = OCUPADO;
-                trem3->setX(trem3->getX() - 10);
-            }
-            break;
-        case 5:
-            if(trilhos[5]&&trilhos[1]){
-                trilhos[5] = OCUPADO;
-                trem3->setX(trem3->getX() - 10);
-            }
-            break;
-        default:
-            break;
-        }
-        break;
-    case 4:
-        switch (id_Trilho) {
-        case 2:
-            if(trilhos[2]&&trilhos[0]){
-                trilhos[2] = OCUPADO;
-                trem4->setY(trem4->getY() - 10);
+            switch (id_Trilho) {
+                case 0:
+                    sem_getvalue(&semaforos[0], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[0]);
+                    trem2->setX(trem2->getX() - 10);
+                    break;
+                case 1:
+                    sem_getvalue(&semaforos[1], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[5], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[1]);
+                    trem2->setX(trem2->getX() + 10);
+                    break;
+                case 3:
+                    sem_getvalue(&semaforos[3], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[3]);
+                    trem2->setX(trem2->getX() - 10);
+                    break;
+                case 4:
+                    sem_getvalue(&semaforos[4], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[3], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[4]);
+                    trem2->setY(trem2->getY() + 10);
+                    break;
+                default:
+                    break;
             }
             break;
         case 3:
-            if(trilhos[3] && trilhos[4]){
-                trilhos[3] = OCUPADO;
-                trem4->setX(trem4->getX() + 10);
-            }
+            switch (id_Trilho) {
+                case 1:
+                    sem_getvalue(&semaforos[1], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[1]);
+                    trem3->setX(trem3->getX() - 10);
+                    break;
+                case 5:
+                    sem_getvalue(&semaforos[5], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[1], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[5]);
+                    trem3->setX(trem3->getX() - 10);
+                    break;
+                default:
+                    break;
+                }
             break;
-        case 6:
-            if(trilhos[6]){
-                trilhos[6] = OCUPADO;
-                trem4->setX(trem4->getX() + 10);
-            }
-            break;
-        default:
-            break;
-        }
-        break;
-    case 5:
-        switch (id_Trilho) {
         case 4:
-            if(trilhos[4]&&trilhos[5]){
-                trilhos[4] = OCUPADO;
-                trem5->setY(trem5->getY() - 10);
-            }
+            switch (id_Trilho) {
+                case 2:
+                    sem_getvalue(&semaforos[2], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[0], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[2]);
+                    trem4->setY(trem4->getY() - 10);
+                    break;
+                case 3:
+                    sem_getvalue(&semaforos[3], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[4], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[3]);
+                    trem4->setX(trem4->getX() + 10);
+                    break;
+                case 6:
+                    sem_getvalue(&semaforos[6], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[6]);
+                    trem4->setX(trem4->getX() + 10);
+                    break;
+                default:
+                    break;
+                }
             break;
         case 5:
-            if(trilhos[5]){
-                trilhos[5] = OCUPADO;
-                trem5->setX(trem5->getX() + 10);
-            }
-            break;
-
-        case 6:
-            if(trilhos[6]){
-                trilhos[6] = OCUPADO;
-                trem5->setX(trem5->getX() - 10);
-            }
+            switch (id_Trilho) {
+                case 4:
+                    sem_getvalue(&semaforos[4], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_getvalue(&semaforos[5], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[4]);
+                    trem5->setY(trem5->getY() - 10);
+                    break;
+                case 5:
+                    sem_getvalue(&semaforos[5], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[5]);
+                    trem5->setX(trem5->getX() + 10);
+                    break;
+                case 6:
+                    sem_getvalue(&semaforos[6], &aux);
+                    if(aux == 0){
+                        break;
+                    }
+                    sem_wait(&semaforos[6]);
+                    trem5->setX(trem5->getX() - 10);
+                    break;
+                default:
+                    break;
+                }
             break;
         default:
             break;
-        }
-        break;
-    default:
-        break;
     }
-    sem_post(&semaphoro);
 };
 
 void MainWindow::desocupaTrilho(int id_Trilho){
-    sem_wait(&semaphoro);
-    trilhos[id_Trilho] = LIVRE;
-    sem_post(&semaphoro);
+    sem_post(&semaforos[id_Trilho]);
 };
-
 /*
  * Ao clicar, trens começam execução
  */
@@ -241,4 +294,3 @@ void MainWindow::on_horizontalSlider_4_valueChanged(int value){
 void MainWindow::on_horizontalSlider_5_valueChanged(int value){
     trem5->setVel(value);
 };
-
